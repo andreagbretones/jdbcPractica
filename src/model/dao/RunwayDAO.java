@@ -430,14 +430,12 @@ public class RunwayDAO {
      * @throws SQLException
      */
 
-    private static List<Runway> generateRunways(ResultSet res) throws SQLException, RunwayException {
+    private static List<Runway> generateRunways(ResultSet res) throws SQLException {
         List<Runway> list = new ArrayList<>();
         while (res.next()) {
             list.add(getRunway(res));
         }
-        if (list.isEmpty()) {
-            throw new RunwayException(1);
-        }
+
         return list;
     }
 
